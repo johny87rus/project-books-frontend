@@ -4,6 +4,8 @@ Part of project https://library.mikhailov.net/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[![Build Status](https://drone.mikhailov.net/api/badges/evgenii/project-books-frontend/status.svg?ref=refs/heads/master)](https://drone.mikhailov.net/evgenii/project-books-frontend)
+
 ## Available Scripts
 
 In the project directory, you can run:
