@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  mockLibrary:
+    ports:
+      - "10001:1080"
+    image: "mockserver/mockserver:5.15.0"
+    environment:
+      - MOCKSERVER_LOG_LEVEL=TRACE
+      - MOCKSERVER_WATCH_INITIALIZATION_JSON=true
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/mockLibrary.json
+      - MOCKSERVER_ATTEMPT_TO_PROXY_IF_NO_MATCHING_EXPECTATION=true
+      - MOCKSERVER_ENABLE_CORS_FOR_API=true
+      - MOCKSERVER_ENABLE_CORS_FOR_ALL_RESPONSES=true
+      - MOCKSERVER_CORS_ALLOW_ORIGIN="*"
+      - MOCKSERVER_CORS_ALLOW_HEADERS="Allow, Content-Encoding, Content-Length, Content-Type, ETag, Expires, Last-Modified, Location, Server, Vary, Authorization"
+    volumes:
+      - type: bind
+        source: ./
+        target: /config
